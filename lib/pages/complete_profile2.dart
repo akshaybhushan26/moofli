@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'complete_profile2.dart';
-
-class CompleteProfile1 extends StatefulWidget {
-  const CompleteProfile1({super.key});
+class CompleteProfile2 extends StatefulWidget {
+  const CompleteProfile2({super.key});
 
   @override
-  State<CompleteProfile1> createState() => _CompleteProfileState();
+  State<CompleteProfile2> createState() => _CompleteProfile2State();
 }
 
-class _CompleteProfileState extends State<CompleteProfile1> {
-  String selectedGender = "Male";
-
+class _CompleteProfile2State extends State<CompleteProfile2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +58,7 @@ class _CompleteProfileState extends State<CompleteProfile1> {
                     Row(
                       children: [
                         Container(
-                          width: 8,
+                          width: 65.4,
                           height: 3,
                           decoration: const BoxDecoration(
                             gradient: LinearGradient(
@@ -76,7 +72,7 @@ class _CompleteProfileState extends State<CompleteProfile1> {
                           ),
                         ),
                         Container(
-                          width: 325,
+                          width: 267,
                           height: 3,
                           decoration: const BoxDecoration(
                             gradient: LinearGradient(
@@ -101,7 +97,7 @@ class _CompleteProfileState extends State<CompleteProfile1> {
                     ),
                     SizedBox(width: 4),
                     Text(
-                      "0%",
+                      "20%",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 95, 95, 95),
@@ -119,7 +115,7 @@ class _CompleteProfileState extends State<CompleteProfile1> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Personal Information",
+                      "Contact Information",
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
@@ -135,7 +131,8 @@ class _CompleteProfileState extends State<CompleteProfile1> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    labelText: 'Name',
+                    labelText: 'Phone Number',
+                    hintText: '+91',
                   ),
                 ),
                 const SizedBox(
@@ -146,52 +143,25 @@ class _CompleteProfileState extends State<CompleteProfile1> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    hintText: 'dd-mm-yy',
-                    labelText: 'DOB',
+                    labelText: 'Email',
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    labelText: 'City',
                   ),
                 ),
                 const SizedBox(
                   height: 15,
                 ),
-                const Align(
-                    alignment: Alignment(-0.90, 0), child: Text("Gender")),
-                //buttons
-                //male
-                Row(
-                  children: [
-                    GenderButton(
-                      text: 'Male',
-                      isSelected: selectedGender == 'Male',
-                      onTap: () {
-                        setState(() {
-                          selectedGender = 'Male';
-                        });
-                      },
-                    ),
-                    const SizedBox(width: 5),
-                    GenderButton(
-                      text: 'Female',
-                      isSelected: selectedGender == 'Female',
-                      onTap: () {
-                        setState(() {
-                          selectedGender = 'Female';
-                        });
-                      },
-                    ),
-                    const SizedBox(width: 5),
-                    GenderButton(
-                      text: 'Rather Not Say',
-                      isSelected: selectedGender == 'Rather Not Say',
-                      onTap: () {
-                        setState(() {
-                          selectedGender = 'Rather Not Say';
-                        });
-                      },
-                    ),
-                  ],
-                ),
                 // back button
-                const SizedBox(height: 180),
+                const SizedBox(height: 170),
                 Row(
                   children: [
                     SizedBox(
@@ -241,41 +211,6 @@ class _CompleteProfileState extends State<CompleteProfile1> {
                   ],
                 ),
               ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-// Gender Button
-class GenderButton extends StatelessWidget {
-  final String text;
-  final bool isSelected;
-  final Function onTap;
-
-  GenderButton(
-      {required this.text, required this.isSelected, required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: GestureDetector(
-        onTap: () => onTap(),
-        child: Container(
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: isSelected ? Colors.black : Colors.grey,
-            ),
-            borderRadius: BorderRadius.circular(10.0),
-            color: isSelected ? Colors.black : Colors.white,
-          ),
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          alignment: Alignment.center,
-          child: Text(
-            text,
-            style: TextStyle(
-              color: isSelected ? Colors.white : Colors.black,
             ),
           ),
         ),
