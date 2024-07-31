@@ -8,6 +8,8 @@ class CompleteProfile1 extends StatefulWidget {
 }
 
 class _CompleteProfileState extends State<CompleteProfile1> {
+  String selectedGender = "Male";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,81 +153,73 @@ class _CompleteProfileState extends State<CompleteProfile1> {
                 // buttons
                 //male
                 Row(
-                  children: [
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: Colors.transparent,
-                        shape: const RoundedRectangleBorder(
-                          side: BorderSide(
-                            style: BorderStyle.solid,
-                          ),
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: const Padding(
-                        padding: EdgeInsets.only(
-                            top: 0, bottom: 0, left: 0, right: 0),
-                        child: Text(
-                          "Male",
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                    //female
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: Colors.transparent,
-                        shape: const RoundedRectangleBorder(
-                          side: BorderSide(
-                            style: BorderStyle.solid,
-                          ),
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: const Padding(
-                        padding: EdgeInsets.only(
-                            top: 0, bottom: 0, left: 0, right: 0),
-                        child: Text(
-                          "Female",
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                    //Rather Not Say
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: Colors.transparent,
-                        shape: const RoundedRectangleBorder(
-                          side: BorderSide(
-                            style: BorderStyle.solid,
-                          ),
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: const Padding(
-                        padding: EdgeInsets.only(
-                            top: 0, bottom: 0, left: 0, right: 0),
-                        child: Text(
-                          "Rather Not Say",
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+              children: [
+                GenderButton(
+                  text: 'Male',
+                  isSelected: selectedGender == 'Male',
+                  onTap: () {
+                    setState(() {
+                      selectedGender = 'Male';
+                    });
+                  },
+                ),
+                SizedBox(width: 10.0),
+                GenderButton(
+                  text: 'Female',
+                  isSelected: selectedGender == 'Female',
+                  onTap: () {
+                    setState(() {
+                      selectedGender = 'Female';
+                    });
+                  },
+                ),
+                SizedBox(width: 10.0),
+                GenderButton(
+                  text: 'Rather Not Say',
+                  isSelected: selectedGender == 'Rather Not Say',
+                  onTap: () {
+                    setState(() {
+                      selectedGender = 'Rather Not Say';
+                    });
+                  },
                 ),
               ],
+            ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class GenderButton extends StatelessWidget {
+  final String text;
+  final bool isSelected;
+  final Function onTap;
+
+  GenderButton({required this.text, required this.isSelected, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: GestureDetector(
+        onTap: () => onTap(),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: isSelected ? Colors.black : Colors.grey,
+            ),
+            borderRadius: BorderRadius.circular(10.0),
+            color: isSelected ? Colors.black : Colors.white,
+          ),
+          padding: EdgeInsets.symmetric(vertical: 10.0),
+          alignment: Alignment.center,
+          child: Text(
+            text,
+            style: TextStyle(
+              color: isSelected ? Colors.white : Colors.black,
             ),
           ),
         ),
