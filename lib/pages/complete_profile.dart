@@ -225,6 +225,46 @@ class _CompleteProfileState extends State<CompleteProfile1> {
                     ),
                   ],
                 ),
+                // back button
+                const SizedBox(height: 190),
+                  Row(
+                    children: [
+                      SizedBox(
+                        height:32,
+                        width: 32,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              padding: EdgeInsets.zero,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5))),
+                          child: Image.asset(
+                            'lib/icons/back.jpeg',
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 207,),
+                      // Next button
+                      SizedBox(
+                        height:41,
+                        width: 89,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              padding: EdgeInsets.zero,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(100))),
+                          child: Image.asset(
+                            'lib/icons/next.png',
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
               ],
             ),
           ),
