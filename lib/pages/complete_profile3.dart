@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'complete_profile3.dart';
-
-class CompleteProfile2 extends StatefulWidget {
-  const CompleteProfile2({super.key});
+class CompleteProfile3 extends StatefulWidget {
+  const CompleteProfile3({super.key});
 
   @override
-  State<CompleteProfile2> createState() => _CompleteProfile2State();
+  State<CompleteProfile3> createState() => _CompleteProfile3State();
 }
 
-class _CompleteProfile2State extends State<CompleteProfile2> {
+class _CompleteProfile3State extends State<CompleteProfile3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +58,7 @@ class _CompleteProfile2State extends State<CompleteProfile2> {
                     Row(
                       children: [
                         Container(
-                          width: 65.4,
+                          width: 130.8,
                           height: 3,
                           decoration: const BoxDecoration(
                             gradient: LinearGradient(
@@ -74,7 +72,7 @@ class _CompleteProfile2State extends State<CompleteProfile2> {
                           ),
                         ),
                         Container(
-                          width: 267,
+                          width: 202,
                           height: 3,
                           decoration: const BoxDecoration(
                             gradient: LinearGradient(
@@ -99,7 +97,7 @@ class _CompleteProfile2State extends State<CompleteProfile2> {
                     ),
                     SizedBox(width: 4),
                     Text(
-                      "20%",
+                      "40%",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 95, 95, 95),
@@ -117,7 +115,7 @@ class _CompleteProfile2State extends State<CompleteProfile2> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Contact Information",
+                      "Skills / Interest",
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
@@ -127,37 +125,6 @@ class _CompleteProfile2State extends State<CompleteProfile2> {
                 ),
                 const SizedBox(
                   height: 20,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    labelText: 'Phone Number',
-                    hintText: '+91',
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    labelText: 'Email',
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    labelText: 'City',
-                  ),
                 ),
                 const SizedBox(
                   height: 15,
